@@ -9,20 +9,173 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    let blueColor: Color = Color(red: 52/255, green: 52/255, blue: 122/255)
+    
     var body: some View {
         
         ScrollView(showsIndicators: true) {
             
-            VStack(spacing: 400) {
+            VStack(spacing: 200) {
                 
-                Circle()
-                .foregroundColor(.green)
-                .frame(width: 200, height: 200)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 5)
-                        .frame(width: 80, height: 80)
-                        .foregroundColor(.white)
-                )
+                ZStack {
+                    
+                    Path() { path in
+                        path.move(to: CGPoint(x: 200, y: 200))
+                        path.addArc(center: .init(x: 200, y: 200), radius: 75, startAngle: Angle(degrees: -90.0), endAngle: Angle(degrees: -60), clockwise: false)
+                        path.closeSubpath()
+                    }
+                    .fill(Color.pink)
+                    
+                    Path() { path in
+                        path.move(to: CGPoint(x: 200, y: 200))
+                        path.addArc(center: .init(x: 200, y: 200), radius: 75, startAngle: Angle(degrees: -90.0), endAngle: Angle(degrees: -60), clockwise: false)
+                        path.closeSubpath()
+                    }
+                    .stroke(blueColor, lineWidth: 5)
+                    //                    .fill(Color.pink)
+                    
+                    Path() { path in
+                        path.move(to: CGPoint(x: 200, y: 200))
+                        path.addArc(center: .init(x: 200, y: 200), radius: 75, startAngle: Angle(degrees: -60), endAngle: Angle(degrees: 270), clockwise: false)
+                        path.closeSubpath()
+                    }
+                    .stroke(blueColor, lineWidth: 5)
+                }
+                
+                ZStack {
+                    
+                    Path() { path in
+                        path.move(to: CGPoint(x: 200, y: 200))
+                        path.addArc(center: .init(x: 200, y: 200), radius: 75, startAngle: Angle(degrees: -90.0), endAngle: Angle(degrees: 0), clockwise: false)
+                    }
+                    .fill(Color.pink)
+                    
+                    Path() { path in
+                        path.move(to: CGPoint(x: 200, y: 200))
+                        path.addArc(center: .init(x: 200, y: 200), radius: 75, startAngle: Angle(degrees: 0), endAngle: Angle(degrees: 270), clockwise: false)
+                    }
+                    .fill(Color.yellow)
+                }
+                
+                ZStack {
+                    
+                    Path() { path in
+                        path.move(to: CGPoint(x: 200, y: 200))
+                        path.addArc(center: .init(x: 200, y: 200), radius: 75, startAngle: Angle(degrees: -90.0), endAngle: Angle(degrees: 0), clockwise: false)
+                    }
+                    .fill(Color.pink)
+                    
+                    Path() { path in
+                        path.move(to: CGPoint(x: 200, y: 200))
+                        path.addArc(center: .init(x: 200, y: 200), radius: 75, startAngle: Angle(degrees: 0), endAngle: Angle(degrees: 45), clockwise: false)
+                    }
+                    .fill(Color.blue)
+                    .offset(x: 10, y: 5)
+                    
+                    Path() { path in
+                        path.move(to: CGPoint(x: 200, y: 200))
+                        path.addArc(center: .init(x: 200, y: 200), radius: 75, startAngle: Angle(degrees: 45), endAngle: Angle(degrees: 75), clockwise: false)
+                    }
+                    .fill(Color.black)
+                    
+                    Path() { path in
+                        path.move(to: CGPoint(x: 200, y: 200))
+                        path.addArc(center: .init(x: 200, y: 200), radius: 75, startAngle: Angle(degrees: 75), endAngle: Angle(degrees: 90), clockwise: false)
+                    }
+                    .fill(Color.gray)
+                    .offset(x: 1.5, y: 15)
+                    
+                    Path() { path in
+                        path.move(to: CGPoint(x: 200, y: 200))
+                        path.addArc(center: .init(x: 200, y: 200), radius: 75, startAngle: Angle(degrees: 90), endAngle: Angle(degrees: 135), clockwise: false)
+                    }
+                    .fill(Color.red)
+                    
+                    Path() { path in
+                        path.move(to: CGPoint(x: 200, y: 200))
+                        path.addArc(center: .init(x: 200, y: 200), radius: 75, startAngle: Angle(degrees: 135), endAngle: Angle(degrees: 225), clockwise: false)
+                    }
+                    .fill(Color.orange)
+                    .offset(x: -10, y: 0)
+                    
+                    Path() { path in
+                        path.move(to: CGPoint(x: 200, y: 200))
+                        path.addArc(center: .init(x: 200, y: 200), radius: 75, startAngle: Angle(degrees: 225), endAngle: Angle(degrees: 270), clockwise: false)
+                    }
+                    .fill(Color.yellow)
+                    .offset(x: -5, y: -10)
+                }
+                
+                
+                ZStack {
+                    
+                    Path() { path in
+                        path.move(to: CGPoint(x: 200, y: 200))
+                        path.addArc(center: .init(x: 200, y: 200), radius: 75, startAngle: Angle(degrees: 0.0), endAngle: Angle(degrees: 90), clockwise: false)
+                    }
+                    .fill(Color.yellow)
+                    
+                    Path() { path in
+                        path.move(to: CGPoint(x: 200, y: 200))
+                        path.addArc(center: .init(x: 200, y: 200), radius: 75, startAngle: Angle(degrees: 90), endAngle: Angle(degrees: 135), clockwise: false)
+                    }
+                    .fill(Color.orange)
+                    
+                    Path() { path in
+                        path.move(to: CGPoint(x: 200, y: 200))
+                        path.addArc(center: .init(x: 200, y: 200), radius: 75, startAngle: Angle(degrees: 135), endAngle: Angle(degrees: 225), clockwise: false)
+                    }
+                    .fill(Color.red)
+                    .offset(x: -10, y: 0)
+                    
+                    Path() { path in
+                        path.move(to: CGPoint(x: 200, y: 200))
+                        path.addArc(center: .init(x: 200, y: 200), radius: 75, startAngle: Angle(degrees: 135), endAngle: Angle(degrees: 225), clockwise: false)
+                        path.closeSubpath()
+                    }
+                    .stroke(Color(red: 52/255, green: 52/255, blue: 122/255), lineWidth: 5)
+                    .offset(x: -10, y: 0)
+                    .overlay(
+                        Text("25%")
+                            .font(.system(.largeTitle, design: .rounded))
+                            .bold()
+                            .foregroundColor(.white)
+                            .offset(x: -50, y: 170)
+                    )
+                    
+                    Path() { path in
+                        path.move(to: CGPoint(x: 200, y: 200))
+                        path.addArc(center: .init(x: 200, y: 200), radius: 75, startAngle: Angle(degrees: 225), endAngle: Angle(degrees: 270), clockwise: false)
+                    }
+                    .fill(Color.pink)
+                    
+                    Path() { path in
+                        path.move(to: CGPoint(x: 200, y: 200))
+                        path.addArc(center: .init(x: 200, y: 200), radius: 75, startAngle: Angle(degrees: 270), endAngle: Angle(degrees: 315), clockwise: false)
+                    }
+                    .fill(Color.purple)
+                    
+                    Path() { path in
+                        path.move(to: CGPoint(x: 200, y: 200))
+                        path.addArc(center: .init(x: 200, y: 200), radius: 75, startAngle: Angle(degrees: 315), endAngle: Angle(degrees: 360), clockwise: false)
+                    }
+                    .fill(Color.blue)
+                }
+                Spacer()
+                
+                Button(action: {
+                    // Action to perform
+                }) {
+                    Circle()
+                        .foregroundColor(.green)
+                        .frame(width: 200, height: 200)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 5)
+                                .frame(width: 80, height: 80)
+                                .foregroundColor(.white)
+                    )
+                }
                 
                 Button(action: {
                     // Action to perform
@@ -32,7 +185,7 @@ struct ContentView: View {
                         .bold()
                         .foregroundColor(.white)
                         .frame(width: 250, height: 50)
-                        .background(Dome().fill(Color.red))
+                        .background(Dome().fill(Color.yellow))
                 }
             }
             
@@ -50,7 +203,7 @@ struct ContentView: View {
                 }
                 
                 Path() { path in
-
+                    
                     path.move(to: CGPoint(x: 100, y: 100))
                     path.addQuadCurve(to: CGPoint(x: 300, y: 100), control: CGPoint(x: 100, y: -20))
                     path.addLine(to: CGPoint(x: 300, y: 140))
